@@ -29,8 +29,7 @@ Download the latest executable from the [Releases Section](https://github.com/oo
 
 ## Running from Source (Optional)
 
-1. **Clone the repository**:
-2. ```git clone https://github.com/oop7/Android_debloater.git```
+1. **Clone the repository**: ```git clone https://github.com/oop7/Android_debloater.git```
 3. **Install required dependencies**:```pip install -r requirements.txt```
 4. **Run the tool**:```python android_debloater.py```
 
