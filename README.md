@@ -10,7 +10,7 @@ This tool provides an easy-to-use graphical interface (GUI) to help users manage
 
 ## 🧩 Requirements
 
-- **ADB (Android Debug Bridge)** must be installed and properly set up on your system [download](https://developer.android.com/tools/releases/platform-tools).
+- **ADB (Android Debug Bridge)** must be installed and properly set up on your system [Download](https://developer.android.com/tools/releases/platform-tools).
 - **Python 3.x** (for those running the script version)
 - **PyQt5** and **Pillow** for image processing (for those running the script version)
 
