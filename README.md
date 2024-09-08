@@ -18,7 +18,7 @@ This tool provides an easy-to-use graphical interface (GUI) to help users manage
 
 ### **Pre-built Executable (Recommended)**
 
-Download the latest executable from the [Releases Section](RELEASES).
+Download the latest executable from the [Releases Section](releases).
 
 1. **Connect your Android device** to your computer with USB debugging enabled.
 2. **Run the downloaded `.exe` file.**
