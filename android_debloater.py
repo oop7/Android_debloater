@@ -32,19 +32,42 @@ class AndroidDebloater(QWidget):
         self.search_bar.setPlaceholderText("Search packages...")
         self.search_bar.textChanged.connect(self.filter_packages)
 
-        # Dark mode toggle
-        self.dark_mode_checkbox = QCheckBox("Enable Dark Mode", self)
+        # Dark mode toggle (set dark mode as default)
+        self.dark_mode_checkbox = QCheckBox("Disable Dark Mode", self)
+        self.dark_mode_checkbox.setChecked(True)
         self.dark_mode_checkbox.stateChanged.connect(self.toggle_dark_mode)
 
         # Create buttons and package list
         self.list_button = QPushButton("List Installed Packages", self)
         self.list_button.clicked.connect(self.list_packages)
+        self.list_button.setStyleSheet("""
+            QPushButton {
+                background-color: #4A4A4A;
+                color: #FFFFFF;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            QPushButton:hover {
+                background-color: #5A5A5A;
+            }
+        """)
 
         self.package_list = QListWidget(self)
         self.package_list.setSelectionMode(QListWidget.MultiSelection)
 
         self.uninstall_button = QPushButton("Uninstall Selected Packages", self)
         self.uninstall_button.clicked.connect(self.uninstall_packages)
+        self.uninstall_button.setStyleSheet("""
+            QPushButton {
+                background-color: #FF5252;
+                color: #FFFFFF;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            QPushButton:hover {
+                background-color: #FF6B6B;
+            }
+        """)
 
         # Add widgets to layout
         self.layout.addWidget(self.search_bar)
@@ -58,6 +81,9 @@ class AndroidDebloater(QWidget):
 
         # Store the complete list of packages for filtering
         self.all_packages = []
+
+        # Set dark mode as default
+        self.toggle_dark_mode(Qt.Checked)
 
     def create_icon_from_base64(self):
         """Create a QIcon from a Base64-encoded image."""
@@ -85,6 +111,11 @@ class AndroidDebloater(QWidget):
                 QPushButton {
                     background-color: #4A4A4A;
                     color: #FFFFFF;
+                    border-radius: 5px;
+                    padding: 10px;
+                }
+                QPushButton:hover {
+                    background-color: #5A5A5A;
                 }
                 QListWidget {
                     background-color: #3E3E3E;
@@ -94,9 +125,14 @@ class AndroidDebloater(QWidget):
                     background-color: #3E3E3E;
                     color: #FFFFFF;
                 }
+                QCheckBox {
+                    color: #FFFFFF;
+                }
             """)
+            self.dark_mode_checkbox.setText("Disable Dark Mode")
         else:
             self.setStyleSheet("")
+            self.dark_mode_checkbox.setText("Enable Dark Mode")
 
     def list_packages(self):
         """Fetch the list of installed packages from the Android device."""
