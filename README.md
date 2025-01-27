@@ -46,3 +46,6 @@ This will generate an `.exe` file in the `dist/` directory.
 
 This project is licensed under the GLP-3.0 License. See the [LICENSE](LICENSE) file for details.
 
+## disclaimer
+
+removing bloatware could void warranties or brick devices
